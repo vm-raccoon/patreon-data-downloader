@@ -1,7 +1,7 @@
 {
     "name": "Patreon data downloader",
     "description": "Patreon data downloader",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "manifest_version": 3,
     "icons": {
         "16": "/images/icon-16x16.png",

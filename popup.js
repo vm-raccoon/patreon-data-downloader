@@ -8,7 +8,7 @@ $audio.forEach(audio => {
 
     const $downloadAudio = document.createElement('a');
     $downloadAudio.href = audio.src;
-    $downloadAudio.target
+    $downloadAudio.target = '_blank';
     $downloadAudio.innerText = 'Download audio';
 
     const $copyDescription = document.createElement('a');
@@ -25,15 +25,26 @@ $audio.forEach(audio => {
         }
     });
 
-    [$downloadAudio, $copyDescription].forEach($el => {
-        const $wrapper = document.createElement('div');
-        $wrapper.style.width = '50%';
-        $wrapper.style.textAlign = 'center';
+    const $downloadImage = document.createElement('a');
+    $downloadImage.href = '#';
+    $downloadImage.target = '_blank';
+    $downloadImage.innerText = 'Download image';
+    const nodes = $parent.previousElementSibling.childNodes;
+    if(nodes.length > 0){
+        const node = nodes[0];
+        let backgroundImageValue = node.style.backgroundImage;
+        backgroundImageValue = backgroundImageValue.replace(/url\("/, '');
+        backgroundImageValue = backgroundImageValue.replace(/"\)/g, '');
+        $downloadImage.href = backgroundImageValue;
+    }
 
+    [$downloadAudio, $copyDescription, $downloadImage].forEach(($el, _, $arr) => {
+        const $wrapper = document.createElement('div');
+        $wrapper.style.width = `${100 / $arr.length}%`;
+        $wrapper.style.textAlign = 'center';
         $wrapper.appendChild($el);
         $block.appendChild($wrapper);
     });
-
 
     $parent.insertBefore($block, audio);
 })
