@@ -1,7 +1,7 @@
 {
     "name": "Patreon data downloader",
     "description": "Patreon data downloader",
-    "version": "0.2.0",
+    "version": "0.2.2",
     "manifest_version": 3,
     "icons": {
         "16": "/images/icon-16x16.png",
@@ -10,7 +10,7 @@
         "128": "/images/icon-128x128.png"
     },
     "action": {
-        "default_popup": "popup.html",
+        "default_popup": "index.html",
         "default_icon": {
             "16": "/images/icon-16x16.png",
             "32": "/images/icon-32x32.png",
@@ -20,11 +20,7 @@
     },
     "permissions": [
         "activeTab",
-        "webRequest",
         "scripting"
-    ],
-    "host_permissions": [
-        "*://*.patreon.com/*"
     ],
     "content_scripts": [{
         "matches": [
