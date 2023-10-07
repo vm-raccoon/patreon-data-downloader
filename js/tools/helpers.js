@@ -5,5 +5,5 @@ const runFunction = async (func) => {
 };
 
 const failMessage = (funcName, { message }) => {
-    console.log(`${funcName}: error - ${message}`);
+    console.error(`${funcName}: error - ${message}`);
 };
