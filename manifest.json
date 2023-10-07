@@ -20,17 +20,24 @@
     },
     "permissions": [
         "activeTab",
+        "webRequest",
         "scripting"
     ],
-    "content_scripts": [
-     {
-       "matches": [
-          "https://*.patreon.com/*"
+    "host_permissions": [
+        "*://*.patreon.com/*"
+    ],
+    "content_scripts": [{
+        "matches": [
+           "https://*.patreon.com/*"
         ],
-       "js": [
-           "js/svg.js",
-           "js/audio.js"
-       ]
-     }
-   ]
+        "js": [
+            "js/tools/svg.js",
+            "js/tools/helpers.js",
+            "js/audio.js",
+            "js/thumbnail.js",
+            "js/postTitle.js",
+            "js/postDescription.js",
+            "index.js"
+        ]
+    }]
 }
